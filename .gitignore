@@ -2,3 +2,5 @@ venv
 *.pyc
 *.py~
 
+.python-version
+foo.log
