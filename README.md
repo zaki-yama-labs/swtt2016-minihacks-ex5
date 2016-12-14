@@ -10,13 +10,29 @@ Heroku Connect を使った課題。
 
 ### 使い方
 
-```
+```zsh
 $ heroku create <app-name>
 $ heroku push origin master
 $ heroku open
+
+# アドオン追加
+$ heroku addons:create heroku-postgresql:hobby-dev
+$ heroku addons:create herokuconnect
+# Heroku Connect の管理画面を開く
+$  heroku addons:open herokuconnect
 ```
 
+
 Heroku Connect の設定を終えた後、`https://<app-name>.herokuapp.com/accounts` を開く。
+
+また、ローカルで動かす場合は Python と virtualenv をインストールした後
+
+```zsh
+$ virtualenv venv
+$ source venv/bin/activate
+$ pip install -r requirements.txt
+$ heroku local web
+```
 
 ### メモ
 
@@ -31,6 +47,10 @@ cur = conn.cursor()
 ```
 
 エラーになった。
+
+```
+21:12:27 web.1   |  OperationalError: could not translate host name "None" to address: nodename nor servname provided, or not known
+```
 
 その解決方法としては、参考リンク後半の [Show Contacts Locally](http://clouddatafacts.com/heroku-connect/flask_psycopg2/flask_psycopg2_prebuilt_get.html#show-contacts-locally) にあるように
 本番環境の `DATABASE_URL` を取得して export してあげればよかった。
