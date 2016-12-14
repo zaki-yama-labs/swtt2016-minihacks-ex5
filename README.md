@@ -1,6 +1,11 @@
 課題5 - Herokuアプリケーションを使ってみる
 ==========================================
 
+[Salesforce World Tour Tokyo 2016 の Minihacks](https://developer.salesforce.com/ja/worldtour2016/minihacks) の課題のうち、
+「課題5 - Herokuアプリケーションを使ってみる」の回答例です。
+
+その他の課題については https://github.com/zaki-yama/swtt2016-minihacks を参照。
+
 Heroku Connect を使った課題。
 
 ### 使い方
@@ -26,15 +31,14 @@ cur = conn.cursor()
 ```
 
 エラーになった。
-これは以前、
-[[Python]HerokuでDjangoアプリケーション開発を始めるためのテンプレート - dackdive's blog](http://dackdive.hateblo.jp/entry/2015/12/22/110707)
-で `DATABASE_URL` とかいじってたのがいけなかったっぽい。
 
-またその解決方法としては、[Show Contacts Locally](http://clouddatafacts.com/heroku-connect/flask_psycopg2/flask_psycopg2_prebuilt_get.html#show-contacts-locally) にあるように
+その解決方法としては、参考リンク後半の [Show Contacts Locally](http://clouddatafacts.com/heroku-connect/flask_psycopg2/flask_psycopg2_prebuilt_get.html#show-contacts-locally) にあるように
 本番環境の `DATABASE_URL` を取得して export してあげればよかった。
 
 ```
 $ heroku config
 === zakiyama-swtt16-minihacks Config Vars
 DATABASE_URL: postgres://xtrhccebofdnoi:edf4cce...@<ip address>.compute-1.amazonaws.com:5432/d6vguddji3uu4g
+
+$ export DATABASE_URL=postgres://xtrhccebofdnoi:edf4cce...@<ip address>.compute-1.amazonaws.com:5432/d6vguddji3uu4g
 ```
