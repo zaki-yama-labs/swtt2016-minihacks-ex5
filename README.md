@@ -2,7 +2,7 @@
 ==========================================
 
 [Salesforce World Tour Tokyo 2016 の Minihacks](https://developer.salesforce.com/ja/worldtour2016/minihacks) の課題のうち、
-「課題5 - Herokuアプリケーションを使ってみる」の回答例です。
+「課題5 - Herokuアプリケーションを使ってみる」の解答例です。
 
 その他の課題については https://github.com/zaki-yama/swtt2016-minihacks を参照。
 
